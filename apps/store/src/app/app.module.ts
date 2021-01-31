@@ -10,9 +10,20 @@ import { StoreUiSharedModule } from 'libs/store/ui-shared/src/lib/store-ui-share
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot(
+      [
+        {
+          path: 'game/:id',
+          loadChildren: () =>
+            import('@bg-hoard/store/feature-game-detail').then(
+              (module) => module.StoreFeatureGameDetailModule
+            ),
+        },
+      ],
+      { initialNavigation: 'enabled' }
+    ),
     MatCardModule,
-    StoreUiSharedModule
+    StoreUiSharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
