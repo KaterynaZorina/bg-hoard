@@ -9,7 +9,7 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     MatCardModule,
     RouterModule.forChild([
-      {path: '', pathMatch: 'full', component: GameDetailComponent}
+      { path: '', pathMatch: 'full', component: GameDetailComponent },
     ]),
   ],
   declarations: [GameDetailComponent],
