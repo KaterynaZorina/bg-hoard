@@ -16,7 +16,7 @@
       "description": "The scope of your lib",
       "x-prompt": "Which directory do you want the lib to be in?s",
       "enum": [
-        ["store", "api", "shared"]
+        "store", "api", "shared"
       ]
     }
   },
