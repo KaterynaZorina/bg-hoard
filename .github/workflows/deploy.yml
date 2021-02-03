@@ -17,7 +17,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
       - uses: bahmutov/npm-install@v1.4.5
-      - run: npm run nx build store -- --configuration=production
-      - run: npm run nx build api -- --configuration=production
-      - run: npm run nx deploy store
-      - run: npm run nx deploy api
+      - run: npm run nx affected -- --target=build --base=HEAD~1 --parallel --configuration=production
+      - run: npm run nx affected -- --target=deploy --base=HEAD~1 --parallel
